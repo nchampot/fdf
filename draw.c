@@ -34,4 +34,3 @@ void	draw_map(t_env e)
 		i++;
 	}
 }
-

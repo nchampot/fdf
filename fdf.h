@@ -20,6 +20,12 @@
 # define LEFT 123
 
 
+typedef struct	s_xy
+{
+	int				x;
+	int				y;
+}				t_xy;
+
 typedef struct	s_img
 {
 	void			*img;
@@ -45,6 +51,7 @@ typedef struct	s_env
 }				t_env;
 
 void	draw_pixel(t_env *e, int x, int y, int color);
+void	draw_seg(t_env *e, t_xy a, t_xy b, int color);
 void	init_map(char *path, t_env *e);
 void	draw_map(t_env env);
 void	init_img(t_env *e);

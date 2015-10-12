@@ -1,4 +1,4 @@
-SRC = reader.c main.c hook.c draw.c
+SRC = reader.c main.c hook.c draw.c draw_seg.c
 
 NAME = fdf
 
