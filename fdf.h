@@ -6,7 +6,7 @@
 #include <unistd.h>
 #include "libft/inc/libft.h"
 
-#include <stdio.h>
+#include <stdio.h>//
 
 # define W 1200
 # define H 1200
@@ -38,6 +38,7 @@ typedef struct	s_img
 typedef struct	s_map
 {
 	int	**data;
+	int	**grid;
 	int	*lineSize;
 	int	nbLin;
 }				t_map;
