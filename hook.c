@@ -2,7 +2,7 @@
 
 int		expose_hook(t_env *e)
 {
-	//draw_map(e->map);
+	draw_map(e->map);
 	mlx_put_image_to_window(e->mlx, e->win, e->img.img, 0, 0);
 	return (0);
 }

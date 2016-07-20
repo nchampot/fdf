@@ -27,10 +27,11 @@ void	draw_map(t_env e)
 		j = 0;
 		while (j < e.map.lineSize[i])
 		{
-			printf("%d ", e.map.data[i][j]);
+			draw_seg(
+			//printf("%d ", e.map.data[i][j]);
 			j++;
 		}
-		printf("\n");
+		//printf("\n");
 		i++;
 	}
 }

@@ -6,11 +6,12 @@ all : $(NAME)
 
 $(NAME) :
 	@make re -C libft/
-	@gcc -Wall -Werror -Wextra $(SRC) libft/libft.a minilibx/libmlx.a -lX11 -lm -lXext -o $(NAME)
+	@clang -Wall -Werror -Wextra $(SRC) libft/libft.a -lmlx -framework AppKit -framework OpenGL -o $(NAME)
 	@echo $(NAME) made successfully
 
 clean :
 	@rm -f $(NAME)
+	@make fclean -C libft/
 
 re : clean all
 

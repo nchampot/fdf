@@ -2,8 +2,8 @@
 # define FDF_H
 
 #include <stdlib.h>
-#include "minilibx/mlx.h"
 #include <unistd.h>
+#include <mlx.h>
 #include "libft/inc/libft.h"
 
 #include <stdio.h>//
