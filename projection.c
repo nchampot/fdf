@@ -1,19 +1,19 @@
 #include "fdf.h"
 
-int		**normalize(int keycode, t_map *m)
-{
-	int		**grid;
 
-	while (i < m->nbline)
+t_xy	proj(int x, int y, int z, int keycode)
+{
+	t_xy	coord;
+
+	if (keycode == NUM1)	// ISOMETRIC PROJECTION
 	{
-		j = 0;
-		while (j < m->lineSize[i])
-		{
-			if (keycode == p1)
-				grid[i][j] = (int)NORMISO(i, j, m->data[i][j]);
-			j++;
-		}
-		i++;
+		coord.x = ISO_X(x, y, z);
+		coord.y = ISO_Y(x, y, z);
 	}
-	return (grid);
+	else			// FLAT PROJECTION
+	{
+		coord.x = x;
+		coord.y = y;
+	}
+	return (coord);
 }

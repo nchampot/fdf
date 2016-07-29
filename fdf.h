@@ -18,7 +18,11 @@
 # define DOWN 125
 # define RIGHT 124
 # define LEFT 123
+# define NUM1 ?
 
+# define ISOMETRIC_PROJECTION NUM1
+# define ISO_X(x, y, z) "insert isometric norme"
+# define ISO_Y(x, y, z) "insert isometric norme"
 
 typedef struct	s_xy
 {
@@ -38,7 +42,6 @@ typedef struct	s_img
 typedef struct	s_map
 {
 	int	**data;
-	int	**grid;
 	int	*lineSize;
 	int	nbLin;
 }				t_map;
@@ -58,6 +61,7 @@ void	draw_map(t_env env);
 void	init_img(t_env *e);
 int		key_hook(int keycode, t_env *e);
 int		expose_hook(t_env *e);
+t_xy	normalize(int x, int y, int z, int keycode);
 
 #endif
 
