@@ -13,16 +13,17 @@
 /*
 **------------KEYS--------------
 */
-# define ESC 65307
+# define ESC 53
 # define UP 126
 # define DOWN 125
 # define RIGHT 124
 # define LEFT 123
-# define NUM1 ?
+# define NUM1 83
+# define NUM2 84
+# define NUM3 85
 
-# define ISOMETRIC_PROJECTION NUM1
-# define ISO_X(x, y, z) "insert isometric norme"
-# define ISO_Y(x, y, z) "insert isometric norme"
+# define ISO_X(x, y, z) (x * 10) + (z * 10) * W / H + 500
+# define ISO_Y(x, y, z) (y * 10) + (z * 10) * W / H + 500
 
 typedef struct	s_xy
 {
@@ -57,11 +58,11 @@ typedef struct	s_env
 void	draw_pixel(t_env *e, int x, int y, int color);
 void	draw_seg(t_env *e, t_xy a, t_xy b, int color);
 void	init_map(char *path, t_env *e);
-void	draw_map(t_env env);
+void	draw_map(t_env *e, int keycode);
 void	init_img(t_env *e);
 int		key_hook(int keycode, t_env *e);
 int		expose_hook(t_env *e);
-t_xy	normalize(int x, int y, int z, int keycode);
+t_xy	proj(int x, int y, int z, int keycode);
 
 #endif
 

@@ -1,6 +1,5 @@
 #include "fdf.h"
 
-
 t_xy	proj(int x, int y, int z, int keycode)
 {
 	t_xy	coord;
