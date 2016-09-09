@@ -16,7 +16,7 @@ void		draw_pixel(t_env *e, int x, int y, int color)
 	e->img.d[y * e->img.szl + x * e->img.bpp / 8 + 2] = (c & 0xFF);
 }
 
-void	draw_map(t_env *e, int keycode)
+void	draw_map(t_env *e)
 {
 	int	i;
 	int	j;
@@ -27,9 +27,9 @@ void	draw_map(t_env *e, int keycode)
 		j = 0;
 		while (j < e->map.lineSize[i] - 1)
 		{
-			draw_seg(e, proj(i, j, e->map.data[i][j], keycode), proj(i, j + 1, e->map.data[i][j], keycode), 0x00FF);
+			draw_seg(e, proj(i, j, e->map.data[i][j], e->proj_type), proj(i, j + 1, e->map.data[i][j], e->proj_type), 0x00FF);
 			if (i > 0)
-				draw_seg(e, proj(i, j, e->map.data[i][j], keycode), proj(i - 1, j, e->map.data[i][j], keycode), 0x00FF);
+				draw_seg(e, proj(i, j, e->map.data[i][j], e->proj_type), proj(i - 1, j, e->map.data[i][j], e->proj_type), 0x00FF);
 			//printf("%d ", e.map.data[i][j]);
 			j++;
 		}

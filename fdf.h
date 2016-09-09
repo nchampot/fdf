@@ -10,6 +10,8 @@
 
 # define W 1200
 # define H 1200
+# define TILE_H 64
+# define TILE_W 64
 /*
 **------------KEYS--------------
 */
@@ -22,8 +24,8 @@
 # define NUM2 84
 # define NUM3 85
 
-# define ISO_X(x, y, z) (x * 10) + (z * 10) * W / H + 500
-# define ISO_Y(x, y, z) (y * 10) + (z * 10) * W / H + 500
+# define ISO_X(x, y, z) ((x) - (y)) * TILE_W
+# define ISO_Y(x, y, z) ((x) + (y)) * TILE_H
 
 typedef struct	s_xy
 {
@@ -53,12 +55,13 @@ typedef struct	s_env
 	void	*win;
 	t_img	img;
 	t_map	map;
+	int		proj_type;
 }				t_env;
 
 void	draw_pixel(t_env *e, int x, int y, int color);
 void	draw_seg(t_env *e, t_xy a, t_xy b, int color);
 void	init_map(char *path, t_env *e);
-void	draw_map(t_env *e, int keycode);
+void	draw_map(t_env *e);
 void	init_img(t_env *e);
 int		key_hook(int keycode, t_env *e);
 int		expose_hook(t_env *e);

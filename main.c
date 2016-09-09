@@ -7,6 +7,7 @@ int main(int ac, char **av)
 	if (ac == 2)
 	{
 		init_map(av[1], &e);
+		e.proj_type = 0;
 		e.mlx = mlx_init();
 		e.win = mlx_new_window(e.mlx, W, H, "Fil de Fer");
 		init_img(&e);
