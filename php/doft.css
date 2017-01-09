@@ -1,0 +1,26 @@
+html { height:100%;}
+body { height:100%; background-color:#505050;}
+
+header
+{
+	background-color:#909090;
+	margin:auto;
+	width:80%;
+	box-shadow: 8px 8px 12px #aaa;
+	border-radius: 10px;
+	display:block;
+}
+
+header > #day
+{
+	height:130px;
+	margin:10px;
+}
+
+header > #img_h
+{
+	display:inline-block;
+	float:right;
+	width:20px;
+	height:20px;
+}
